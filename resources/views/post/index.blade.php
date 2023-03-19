@@ -6,5 +6,8 @@
         @foreach($posts as $post)
             <a href="{{ route("post.show", $post->id) }}">{{$post->id}}.{{$post->title}}</a><br>
         @endforeach
+        <div class="mt-3">
+            {{$posts->withQueryString()->links()}}
+        </div>
     </div>
 @endsection

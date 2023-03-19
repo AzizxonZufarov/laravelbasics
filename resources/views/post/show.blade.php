@@ -4,7 +4,7 @@
 <div>
     <div>{{$post->title}}</div>
     <a href="{{ route("post.edit", $post->id) }}">Edit</a>
-    <form action="{{ route("post.delete", $post->id) }}" method="post">
+    <form action="{{ route("post.destroy", $post->id) }}" method="post">
         @csrf
         @method("delete")
         <input type="submit" value="Delete"/>

@@ -15,6 +15,9 @@
                 <li><a href="{{ route('post.index')  }}">posts</a> </li>
                 <li><a href="{{ route('about.index')  }}">about</a> </li>
                 <li><a href="{{ route('contact.index')  }}">contact</a> </li>
+                @can('view', auth()->user())
+                    <li><a href="{{ route('post.admin')  }}">admin</a> </li>
+                @endcan
             </ul>
         </nav>
         @yield('content')
